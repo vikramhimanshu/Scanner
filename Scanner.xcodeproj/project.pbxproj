@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		65C201D81FAA8D78004C9F52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C201D71FAA8D78004C9F52 /* AppDelegate.swift */; };
-		65C201DA1FAA8D78004C9F52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C201D91FAA8D78004C9F52 /* ViewController.swift */; };
+		65C201DA1FAA8D78004C9F52 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C201D91FAA8D78004C9F52 /* ScannerViewController.swift */; };
 		65C201DD1FAA8D78004C9F52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C201DB1FAA8D78004C9F52 /* Main.storyboard */; };
 		65C201DF1FAA8D78004C9F52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65C201DE1FAA8D78004C9F52 /* Assets.xcassets */; };
 		65C201E21FAA8D79004C9F52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C201E01FAA8D79004C9F52 /* LaunchScreen.storyboard */; };
+		65C201EA1FAA9785004C9F52 /* ScannerViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C201E91FAA9785004C9F52 /* ScannerViewPresenter.swift */; };
+		65C201EC1FAA97AB004C9F52 /* ScannerViewWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C201EB1FAA97AB004C9F52 /* ScannerViewWireFrame.swift */; };
+		65C201EE1FAA9A80004C9F52 /* ConvenientExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C201ED1FAA9A80004C9F52 /* ConvenientExtentions.swift */; };
+		65C201F01FAA9A93004C9F52 /* CleanExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C201EF1FAA9A93004C9F52 /* CleanExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		65C201D41FAA8D78004C9F52 /* Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C201D71FAA8D78004C9F52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		65C201D91FAA8D78004C9F52 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		65C201D91FAA8D78004C9F52 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		65C201DC1FAA8D78004C9F52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65C201DE1FAA8D78004C9F52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65C201E11FAA8D79004C9F52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65C201E31FAA8D79004C9F52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65C201E91FAA9785004C9F52 /* ScannerViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewPresenter.swift; sourceTree = "<group>"; };
+		65C201EB1FAA97AB004C9F52 /* ScannerViewWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewWireFrame.swift; sourceTree = "<group>"; };
+		65C201ED1FAA9A80004C9F52 /* ConvenientExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenientExtentions.swift; sourceTree = "<group>"; };
+		65C201EF1FAA9A93004C9F52 /* CleanExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				65C201D71FAA8D78004C9F52 /* AppDelegate.swift */,
-				65C201D91FAA8D78004C9F52 /* ViewController.swift */,
+				65C201D91FAA8D78004C9F52 /* ScannerViewController.swift */,
+				65C201E91FAA9785004C9F52 /* ScannerViewPresenter.swift */,
+				65C201EB1FAA97AB004C9F52 /* ScannerViewWireFrame.swift */,
+				65C201ED1FAA9A80004C9F52 /* ConvenientExtentions.swift */,
+				65C201EF1FAA9A93004C9F52 /* CleanExtensions.swift */,
 				65C201DB1FAA8D78004C9F52 /* Main.storyboard */,
 				65C201DE1FAA8D78004C9F52 /* Assets.xcassets */,
 				65C201E01FAA8D79004C9F52 /* LaunchScreen.storyboard */,
@@ -92,10 +104,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0910;
-				ORGANIZATIONNAME = "Himanshu Tantia";
+				ORGANIZATIONNAME = "Kreativ Apps, LLC";
 				TargetAttributes = {
 					65C201D31FAA8D78004C9F52 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -136,8 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65C201DA1FAA8D78004C9F52 /* ViewController.swift in Sources */,
+				65C201EC1FAA97AB004C9F52 /* ScannerViewWireFrame.swift in Sources */,
+				65C201EA1FAA9785004C9F52 /* ScannerViewPresenter.swift in Sources */,
+				65C201DA1FAA8D78004C9F52 /* ScannerViewController.swift in Sources */,
+				65C201EE1FAA9A80004C9F52 /* ConvenientExtentions.swift in Sources */,
 				65C201D81FAA8D78004C9F52 /* AppDelegate.swift in Sources */,
+				65C201F01FAA9A93004C9F52 /* CleanExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +297,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kreativapps.Scanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -295,6 +313,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kreativapps.Scanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
