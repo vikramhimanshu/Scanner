@@ -37,7 +37,7 @@ class ScannerViewController: UIViewController {
 
     public weak var delegate: ScannerViewControllerDelegate?
     public weak var dataSource: ScannerViewControllerDataSource?
-    public var allowMultipleScans: Bool = true
+    public var allowMultipleScans: Bool = false
     
     fileprivate let metadataObjectsSemaphore = DispatchSemaphore(value: 1)
     fileprivate let metadataObjectsQueue = DispatchQueue(label: "com.kreativapps.app.Scanner.ScannerViewController-Queue", attributes: [], target: nil)
@@ -150,24 +150,25 @@ extension ScannerViewController : AVCaptureMetadataOutputObjectsDelegate {
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         if metadataObjectsSemaphore.wait(timeout: .now()) == .success {
-        var scanMessage = [ScanMessage]()
-        if !allowMultipleScans {
-            stopSession()
-            if let metadataObject = metadataObjects.first {
-                read(metadataObject, &scanMessage)
-            }
-            wireframe?.dismiss(animated: true, completion: {
-                self.delegate?.scanner(session: self, didDetectObject: scanMessage)
-            })
-        } else {
-            metadataObjectsQueue.async {
-                for metadataObject in metadataObjects {
-                    self.read(metadataObject, &scanMessage)
+            var scanMessage = [ScanMessage]()
+            if !allowMultipleScans {
+                stopSession()
+                if let metadataObject = metadataObjects.first {
+                    read(metadataObject, &scanMessage)
                 }
-                self.delegate?.scanner(session: self, didDetectObject: scanMessage)
-                self.metadataObjectsSemaphore.signal()
+                wireframe?.dismiss(animated: true, completion: {
+                    self.metadataObjectsSemaphore.signal()
+                    self.delegate?.scanner(session: self, didDetectObject: scanMessage)
+                })
+            } else {
+                metadataObjectsQueue.async {
+                    for metadataObject in metadataObjects {
+                        self.read(metadataObject, &scanMessage)
+                    }
+                    self.delegate?.scanner(session: self, didDetectObject: scanMessage)
+                    self.metadataObjectsSemaphore.signal()
+                }
             }
-        }
         }
     }
 }
